@@ -14,26 +14,30 @@
   <div class="wrapper">
     
     <h1>ANU</h1>
-    <p class="moto">"We connect hospitality" <span class="trademark">™</span></p>
+    <p class="moto">A freelance gig platform for the hospitality industry</p>
     <img class="hp-img" src="https://thumbs.dreamstime.com/b/abstract-background-vector-organic-irregular-lines-maze-pattern-black-white-chaotic-design-88318932.jpg" alt="">
     <p></p>
 
     <div class="home-bar">
-      <a href="/" class="<%= "active-home" if request.path == "/" %> home"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+    </div>
+    <a href="/" class="<%= "active-home" if request.path == "/" %> home"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+    <div>
+      <a href="/users/new" class="<%= "active-signup" if request.path == "/users/new" %>"><i class="fa fa-user-plus" aria-hidden="true"></i></i>Sign up</a>
+      <div class="border <%= "active-border-signup" if request.path == "/users/new" %>"></div>
     </div>
 
     <nav class="nav-bar">
       <div class="tabs">
-        <a href="/overview" class="<%= "active" if request.path == "/overview" %>">overview</a>
-        <div class="border <%= "active-border" if request.path == "/overview" %>"></div>
+        <a href="/how-it-works" class="<%= "active" if request.path == "/how-it-works" %>">How it works</a>
+        <div class="border <%= "active-border" if request.path == "/how-it-works" %>"></div>
       </div>
       <div class="tabs">
-        <a href="/restaurants" class="<%= "active" if request.path == "/restaurants" %>">restaurants</a>
-        <div class=" border <%= "active-border" if request.path == "/restaurants" %>"></div>
+        <a href="/browse-staff" class="<%= "active" if request.path == "/browse-staff" %>">Browse staff</a>
+        <div class=" border <%= "active-border" if request.path == "/browse-staff" %>"></div>
       </div>
       <div class="tabs">
-        <a href="/workers" class="<%= "active" if request.path == "/workers" %>">workers</a>
-        <div class=" border <%= "active-border" if request.path == "/workers" %>"></div>
+        <a href="/browse-gigs" class="<%= "active" if request.path == "/browse-gigs" %>">Browse gigs</a>
+        <div class=" border <%= "active-border" if request.path == "/browse-gigs" %>"></div>
       </div>
     </nav>
   </div>

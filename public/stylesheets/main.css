@@ -34,31 +34,15 @@ h1
     font-family: 'Dancing Script', cursive;
     font-size: 1.5em;
 }
-.trademark
-{
-    font-family: 'Julius Sans One', sans-serif;
-    font-size: .6em;
-    color: rgba(0, 0, 0, 0.655);
-}
 a
 {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.772);
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.45);
 }
-.home
-{
-    
-    top: 0;
-    left: 0;
-    padding: 20px;
-    width: 100%;
-    color: rgba(0, 0, 0, 0.772);
-    position: fixed; 
-}
 .home-bar
 {
-    background: linear-gradient(white, rgba(255, 255, 255, 0));
+    background: linear-gradient(white 30%, rgba(255, 255, 255, 0));
     position: fixed;
     height: 150px;
     top: 0;
@@ -73,6 +57,30 @@ a
 .fa-home
 {
     padding-right: 10px;
+}
+.home
+{
+    top: 0;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    position: fixed; 
+}
+.fa-user-plus
+{
+    margin-top: 20px;
+}
+.active-signup
+{
+    color: #14a96d;
+}
+.active-border-signup
+{
+    height: 0;
+    width: 20px;
+    border: 1px solid #14a96d;
+    border-radius: 50px;
+    box-shadow: 0 0 1px #14a96d5e;
 }
 .hp-img
 {
@@ -91,6 +99,9 @@ a
 }
 .tabs
 {
+    position: relative;
+    flex-wrap: wrap;
+    margin: 0 10px;
     flex-grow: 1;
     flex-shrink: 1 auto;
     flex-basis: 100%;
@@ -103,7 +114,6 @@ a
 }
 .border
 {
-    margin-left: 53px;
     margin-top: 5px;
     height: 0;
     width: 20px;
@@ -112,7 +122,7 @@ a
 }
 .active-border
 {
-    margin-left: 53px;
+    margin-left: 30px;
     margin-top: 5px;
     height: 0;
     width: 20px;
@@ -130,12 +140,12 @@ a
 /* END - LAYOUT */
 
 
-.overview
+.how-it-works
 {
     margin: 0 0 50px 0;
     padding: 0 50px;
 }
-.overview-content
+.how-it-works-content
 {
     margin: 50px 0 0 0;
     display: grid;
@@ -143,8 +153,9 @@ a
     align-items: center;
     justify-content: center;
     text-align: center;
+    gap: 20px;;
 }
-.overview-img
+.how-it-works-img
 {
     margin: 0;
     width: 300px;
@@ -162,4 +173,77 @@ h2
 p
 {
     color: rgba(0, 0, 0, 0.697);
+}
+
+/* NEW USERS */
+.add-user
+{
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-self: center;
+    justify-content: center;
+}
+label
+{
+    display: block;
+    margin: 40px auto;
+    text-align: center;
+    color: black;
+
+}
+input
+{
+    margin: 0 auto;
+    padding: 0;
+    width: 400px;
+    font-family: inherit;
+    text-align: center;
+    font-size: .8em;
+    background-color: transparent;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom: 2px dashed #454545;
+    color: #14a96d;
+}
+input::placeholder 
+{
+    color: rgb(120, 120, 120);
+    opacity: 1;
+}
+input:focus
+{
+    outline: none;
+    border-bottom: 2px dashed #14a96d;
+    transition-duration: 1s;
+    color: #14a96d;
+}
+input:focus::placeholder 
+{
+    color: rgba(163, 163, 163, 0.765);
+    opacity: 1;
+}
+button
+{
+    margin: 60px auto;
+    padding: 10px;
+    width: 300px;
+    border: none;
+    background-image: url(https://image.freepik.com/free-vector/grunge-is-black-white-background-abstract-monochrome-texture-pattern-cracks-chips_35257-317.jpg);
+    background-size: 200px;
+    background-position: 35px 0;
+    box-shadow: inset -5px 5px 10px #0b0b0b1f,
+                inset 5px -15px 10px #00000086,
+                -5px 5px 10px #00000045;
+    border-radius: 50px;
+    color: black;
+    font-family: 'Julius Sans One', sans-serif;
+}
+button:focus 
+{
+    outline: 0;
+    box-shadow: inset -5px 5px 10px #0b0b0b1f,
+    inset 5px -15px 10px #00000086,
+    -5px 5px 10px #00000045;
 }

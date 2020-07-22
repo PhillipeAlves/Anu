@@ -1,6 +1,6 @@
-CREATE DATABASE hospitality_app;
+CREATE DATABASE anu;
 
-CREATE TABLE posts (
+CREATE TABLE gigs (
     id SERIAL PRIMARY KEY,
     title VARCHAR(50),
     description TEXT,

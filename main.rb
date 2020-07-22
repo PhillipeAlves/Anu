@@ -1,10 +1,10 @@
 require 'sinatra'
 
 require 'sinatra/reloader'
-also_reload "models/post"
+also_reload "models/gigs"
 also_reload "models/user"
 require "pg"
-require_relative "models/post"
+require_relative "models/gigs"
 require_relative "models/user"
 
 enable :sessions
@@ -40,36 +40,69 @@ get '/' do
 
 end
 
-get '/overview' do
+get '/how-it-works' do
  
-  erb :overview
+  erb :how_it_works
 
 end
 
-get '/restaurants' do
+get '/browse-staff' do
  
-  erb :restaurants
+  erb :browse_staff
 
 end
 
-get '/workers' do
+get '/browse-gigs' do
  
-  erb :workers
+  erb :browse_gigs
 
 end
 
 
+# ======================USERS========================
 
-# ===POSTS===
+
+get '/users/new' do
+
+  erb :new_users
+
+end
+
+post '/users' do
+
+  if params["user_name"] == "" && params["email"] == "" && params["password"] == ""
+  
+    error = "All fields must be filled"
+
+    erb :users, locals: { error: error }
+  
+  else
+
+  create_user(params["user_name"], params["email"], params["password"])
+
+  end
+
+  redirect"/"
+
+end
+
+get '/users' do
+
+  erb :users
+
+end
 
 
-get '/post/new' do
+# ========================GIGS========================
+
+
+get '/gigs/new' do
 
   erb :new
 
 end
 
-get '/post/:id' do
+get '/gigs/:id' do
 
   erb :new
 
@@ -77,24 +110,24 @@ end
 
 
 
-get '/posts-front-of-house' do
+get '/gigs-front-of-house' do
 
-  posts_FOH = find_posts_front_of_house
+  gigs_FOH = find_gigs_front_of_house
   
-  erb :posts_front_of_house, locals: { posts_FOH: posts_FOH }
+  erb :gigs_front_of_house, locals: { gigs_FOH: gigs_FOH }
 
 end
 
-get '/posts-back-of-house' do
+get '/gigs-back-of-house' do
 
-  posts_BOH = find_posts_back_of_house
+  gigs_BOH = find_gigs_back_of_house
   
-  erb :posts_back_of_house, locals: { posts_BOH: posts_BOH }
+  erb :gigs_back_of_house, locals: { gigs_BOH: gigs_BOH }
 
 end
 
 
-get '/post/:id' do
+get '/gigs/:id' do
 
   dish = find_one_dish_by_id(params["id"])
 
@@ -102,7 +135,7 @@ get '/post/:id' do
 
 end
 
-post '/post' do
+post '/gigs' do
 
   return "get out of here" unless logged_in? # early return. guard  condition
 
@@ -115,7 +148,7 @@ post '/post' do
 end
 
 
-delete '/post/:id' do
+delete '/gigs/:id' do
 
   # params!!!
 
@@ -125,7 +158,7 @@ delete '/post/:id' do
 
 end
 
-get '/post/:id/edit' do
+get '/gigs/:id/edit' do
 
   dish = find_one_dish_by_id(params["id"])
 
@@ -133,11 +166,11 @@ get '/post/:id/edit' do
 
 end
 
-patch '/post/:id' do
+patch '/gigs/:id' do
 
   update_dish(params["id"], params["title"], params["image_url"])
   
-  redirect "/post/#{params["id"]}"
+  redirect "/gigs/#{params["id"]}"
 
 end
 
