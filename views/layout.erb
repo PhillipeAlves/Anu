@@ -21,15 +21,15 @@
     <nav class="nav-bar">
       <div class="tabs">
         <a href="/overview" class="<%= "active" if request.path == "/overview" %>">overview</a>
-        <div class="<%= "active-boarder" if request.path == "/overview" %>"></div>
+        <div class="border <%= "active-border" if request.path == "/overview" %>"></div>
       </div>
       <div class="tabs">
         <a href="/restaurants" class="<%= "active" if request.path == "/restaurants" %>">restaurants</a>
-        <div class="<%= "active-boarder" if request.path == "/restaurants" %>"></div>
+        <div class=" border <%= "active-border" if request.path == "/restaurants" %>"></div>
       </div>
       <div class="tabs">
         <a href="/workers" class="<%= "active" if request.path == "/workers" %>">workers</a>
-        <div class="<%= "active-boarder" if request.path == "/workers" %>"></div>
+        <div class=" border <%= "active-border" if request.path == "/workers" %>"></div>
       </div>
     </nav>
   </div>
