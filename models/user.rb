@@ -4,9 +4,9 @@ require 'bcrypt'
 # ===CREATE===
 
 
-def create_user(user_name, email, password)
+def create_user(email, password)
     password_digest = BCrypt::Password.create(password)
-    run_sql("INSERT INTO users (user_name, email, password_digest) values('#{user_name}', '#{email}', '#{password_digest}');")
+    run_sql("INSERT INTO users (email, password_digest) values('#{email}', '#{password_digest}');")
 end
 
 

@@ -70,19 +70,17 @@ end
 
 post '/users' do
 
-  if params["user_name"] == "" && params["email"] == "" && params["password"] == ""
-  
-    error = "All fields must be filled"
+  if params["email"] == "" && params["password"] == ""
 
-    erb :users, locals: { error: error }
+    redirect "/users/new", 303
   
   else
 
-  create_user(params["user_name"], params["email"], params["password"])
+  create_user(params["email"], params["password"])
 
   end
 
-  redirect"/"
+  redirect "/"
 
 end
 
@@ -143,6 +141,8 @@ post '/gigs' do
   # current_user checks the database, not the session
   create_dish(params["title"], params["image_url"], current_user["id"])
 
+  create_gig(params["title"], params["description"], params["user_id"], params["is_front_of_house"],params["is_back_of_house"])
+
   redirect "/"
 
 end
@@ -150,9 +150,7 @@ end
 
 delete '/gigs/:id' do
 
-  # params!!!
-
-  destroy_dish(params["id"])
+  delete_dish(params["id"])
 
   redirect "/"
 
@@ -160,19 +158,22 @@ end
 
 get '/gigs/:id/edit' do
 
-  dish = find_one_dish_by_id(params["id"])
+  gig = find_one_gig_by_id(params["id"])
 
-  erb :edit, locals: { dish: dish }
+  erb :edit, locals: { gig: gig }
 
 end
 
 patch '/gigs/:id' do
 
-  update_dish(params["id"], params["title"], params["image_url"])
+  update_gig(params["id"], params["title"], params["is_front_of_house"], params["is_back_of_house"])
   
   redirect "/gigs/#{params["id"]}"
 
 end
+
+
+# ======================SESSION======================
 
 
 get '/session/new' do
