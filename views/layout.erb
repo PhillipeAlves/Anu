@@ -2,11 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World</title>
+  <title>HOSPITALITY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel='stylesheet' href='/stylesheets/main.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+  <div class="wrapper">
+    <h1>ANU</h1>
+    <p class="moto">We connect hospitality</p>
+    <img class="hp-img" src="https://images.unsplash.com/photo-1586772799221-21e098f8dcb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
+    <p></p>
+
+    <a href="/" class="<%= "active-home" if request.path == "/" %> home">Home<i class="fa fa-home" aria-hidden="true"></i></a>
+    <nav class="nav-bar">
+      <div class="tabs">
+        <a href="/overview" class="<%= "active" if request.path == "/overview" %>">overview</a>
+        <div class="<%= "active-boarder" if request.path == "/overview" %>"></div>
+      </div>
+      <div class="tabs">
+        <a href="/restaurants" class="<%= "active" if request.path == "/restaurants" %>">restaurants</a>
+        <div class="<%= "active-boarder" if request.path == "/restaurants" %>"></div>
+      </div>
+      <div class="tabs">
+        <a href="/workers" class="<%= "active" if request.path == "/workers" %>">workers</a>
+        <div class="<%= "active-boarder" if request.path == "/workers" %>"></div>
+      </div>
+    </nav>
+  </div>
 
   <%= yield %>
 
