@@ -24,16 +24,21 @@ body
 }
 h1
 {
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
     padding: 0;
     font-size: 5em;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
 }
 .moto
 {
-    font-style: italic;
     font-family: 'Dancing Script', cursive;
     font-size: 1.5em;
+}
+.trademark
+{
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: .6em;
+    color: rgba(0, 0, 0, 0.655);
 }
 a
 {
@@ -147,4 +152,14 @@ a
 .right-side-image
 {
     justify-self: end;;
+}
+h2
+{
+    margin: 0 auto;
+    padding: 0;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.45);
+}
+p
+{
+    color: rgba(0, 0, 0, 0.697);
 }
