@@ -1,0 +1,26 @@
+<div class="profile-page">
+
+    <h2>Hi <%= user["user_name"] %></h2>
+
+    <form class="form-styling" action="/profile" enctype="multipart/form-data" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <label for="">Username</label>
+        <input name="user_name" type="text" value="<%= user["user_name"] %>">
+        <label for="">Bio</label>
+        <input name="bio" type="text" value="<%= user["bio"] %>">
+        <label for="">Skills</label>
+        <input name="skills" type="text" value="<%= user["skills"] %>">
+        <label for="">Profile Picture</label>
+        <input name="image_data" type="file" value="<%= user["image_data"] %>">
+        <select class="add-type" name="position">
+            <option value="FOH" selected>Front of House</option>
+            <option value="BOH">Back of House</option>
+        </select>
+        <button class="marble">UPDATE</button>
+    </form>
+
+    <a class="back-to-profile" href="/profile"><i class="fa fa-undo" aria-hidden="true"></i> Back to Profile</a>
+
+</div>
+
+        

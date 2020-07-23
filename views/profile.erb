@@ -1,0 +1,23 @@
+<div class="profile-page">
+
+    <h2>Hi <%= user["user_name"] %></h2>
+
+    <p><%= user["bio"] %></p>
+
+    <p><%= user["skills"] %></p>
+    
+    <img class="profile-img" src="<%= user["image_data"] %>" alt="">
+
+    <% if user["is_front_of_house"] == "t" %>
+
+        <p>Currently looking for Front of House Gigs</p>
+
+    <% else %>
+
+        <p>Currently looking for Back of House Gigs</p>
+
+    <% end %>
+
+    <a href="/profile/edit" class="edit-profile-link">Edit profile</a>
+
+</div>

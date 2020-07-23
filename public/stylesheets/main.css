@@ -93,6 +93,13 @@ a
 {
     color: #14a96d;
 }
+.profile
+{
+    font-size: .7em;
+    top: 20px;
+    right: 165px;
+    position: fixed; 
+}
 .hp-img
 {
     margin-top: 50px;
@@ -125,21 +132,15 @@ a
 }
 .border
 {
-    margin-top: 5px;
-    height: 0;
-    width: 20px;
-    border: 1px solid #ffffff00;
-    border-radius: 50px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    font-size: .3em;
 }
 .active-border
 {
-    margin-left: 30px;
-    margin-top: 5px;
-    height: 0;
-    width: 20px;
-    border: 1px solid #14a96d;
-    border-radius: 50px;
-    box-shadow: 0 0 1px #14a96d5e;
+    color: #14a96d;
 }
 .border-image
 {
@@ -150,6 +151,7 @@ a
 
 /* END - LAYOUT */
 
+/* START - HOW IT WORKS */
 
 .how-it-works
 {
@@ -183,10 +185,55 @@ h2
 }
 p
 {
+    margin: 40px auto;
+    color: rgba(0, 0, 0, 0.697);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* END - HOW IT WORKS */
+
+/* START - BROWSE STAFF */
+
+.browse-staff
+{
+    margin: 0 0 50px 0;
+    padding: 0 50px;
+}
+.browse-staff-content
+{
+    margin: 50px 0 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+.browse-staff-img
+{
+    margin: 0;
+    width: 300px;
+}
+.right-side-image
+{
+    justify-self: end;;
+}
+h2
+{
+    margin: 0 auto;
+    padding: 0;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.45);
+}
+p
+{
+    margin: 20px auto;
     color: rgba(0, 0, 0, 0.697);
 }
 
-/* NEW USERS */
+/* END - BROWSE STAFF */
+
+/* START - NEW USERS */
+
 .form-styling
 {
     margin: 50px auto;
@@ -201,7 +248,6 @@ label
     margin: 20px auto;
     text-align: center;
     color: black;
-
 }
 input
 {
@@ -281,3 +327,85 @@ input:focus::placeholder
 {
     outline: 0;
 }
+
+/* END - NEW USERS */
+
+/* START - PROFILE */
+
+.profile-page
+{
+    margin: 50px auto;
+    display: grid;
+    align-self: center;
+    justify-content: center;
+}
+.edit-profile-link
+{
+    margin: 50px auto;
+    text-align: center;
+}
+.profile-img
+{
+    margin: 0 auto;
+    width: 300px;
+}
+
+/* END - PROFILE */
+
+/* START - EDIT PROFILE */
+
+.browse-staff
+{
+    margin: 0 0 50px 0;
+    padding: 0 50px;
+}
+.browse-staff-img
+{
+    margin: 0;
+    width: 300px;
+}
+
+.add-type {
+	font-size: 16px;
+	font-family: sans-serif;
+	font-weight: 700;
+	color: #444;
+	line-height: 1.3;
+	padding: .6em 1.4em .5em .8em;
+	width: 160px;
+	margin: 30px auto;
+	border: 1px solid rgb(205, 205, 205);
+    box-shadow: inset -1px 1px 5px #ffffff,
+                0 1px 2px 1px rgba(0,0,0,.04);
+	border-radius: .5em;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: rgb(236, 235, 235);
+	background-position: right .7em top 50%, 0 0;
+	background-size: .65em auto, 100%;
+}
+.add-type::-ms-expand {
+	display: none;
+}
+.add-type:hover {
+	border-color: rgb(81, 81, 81);
+}
+.add-type:focus {
+	border-color: #14a96d;
+    box-shadow: inset -1px 1px 3px #000f09b7;
+	color: #14a96d;
+	outline: none;
+}
+.add-type option {
+	font-weight:normal;
+}
+.back-to-profile
+{
+    margin: 0 auto;
+}
+.fa-undo
+{
+    font-size: .7em;
+}
+/* END - EDIT PROFILE */

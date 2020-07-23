@@ -1,11 +1,12 @@
 require 'sinatra'
-
 require 'sinatra/reloader'
 also_reload "models/gigs"
 also_reload "models/user"
 require "pg"
+require 'cloudinary'
 require_relative "models/gigs"
 require_relative "models/user"
+require "URI"
 
 enable :sessions
 
@@ -62,6 +63,9 @@ end
 # ======================USERS========================
 
 
+# ===Create===
+
+
 get '/users/new' do
 
   erb :new_users
@@ -84,12 +88,75 @@ post '/users' do
 
 end
 
+
+# ===READ===
+
+get '/profile' do
+
+  return "Please log in to access this content" unless logged_in?
+
+  user = find_one_user_by_id(current_user["id"])
+
+  erb :profile, locals: { user: user }
+
+end
+
 get '/users' do
 
   erb :users
 
 end
 
+# ===UPDATE===
+get '/profile/edit' do
+
+  user = find_one_user_by_id(current_user["id"])
+
+  erb :edit_profile, locals: { user: user }
+
+end
+
+config = {
+  cloud_name: "dnyb6nnrp",
+  api_key: ENV["CLOUDINARY_KEY"],
+  api_secret: ENV["CLOUDINARY_SECRET"]
+}
+
+patch '/profile' do
+
+  params["position"]
+
+  if params["position"] == "FOH"
+
+    is_front_of_house = "t"
+
+    is_back_of_house = "f"
+
+  else
+
+    is_front_of_house = "f"
+
+    is_back_of_house = "t"
+  
+  end
+
+  if params[:image_data]
+  
+    result = Cloudinary::Uploader.upload(params["image_data"]["tempfile"], config)
+  
+    image_data = result["url"]
+  
+  else
+
+    image_data = find_one_user_by_id(current_user["id"])["image_data"]
+
+  end
+
+  update_user(current_user["id"], params["user_name"], params["bio"], params["skills"], image_data, is_front_of_house, is_back_of_house)
+  
+  redirect "/profile"
+
+end
 
 # ========================GIGS========================
 
@@ -177,7 +244,9 @@ end
 
 
 get '/session/new' do
+
   erb :new_session
+
 end
 
 post '/session' do
@@ -194,7 +263,7 @@ post '/session' do
 
     session["user_id"] = user["id"]
 
-    redirect"/"
+    redirect "/profile"
   else
     erb :new_session
   end

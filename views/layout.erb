@@ -18,24 +18,25 @@
     <img class="hp-img" src="https://thumbs.dreamstime.com/b/abstract-background-vector-organic-irregular-lines-maze-pattern-black-white-chaotic-design-88318932.jpg" alt="">
     <p></p>
 
-    <div class="home-bar">
-    </div>
+    <div class="home-bar"></div>
     <a href="/" class="<%= "active-home" if request.path == "/" %> home">Home</a>
-    <div>
     
     <!-- LOG IN -->
 
     <% if logged_in? %>
-    <form action="/session" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <button class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
-    </form>
+
+        <form action="/session" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
+        </form>
+        <a href="/profile" class="profile <%= "active-login" if request.path == "/session/new" %>"><i class="fa fa-user" aria-hidden="true"></i></i> Profile</a>
+
     <% else %>
-        </div>
+       
         <a href="/session/new" class="login <%= "active-login" if request.path == "/session/new" %>"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
         <a href="/users/new" class="signup <%= "active-signup" if request.path == "/users/new" %>">Sign up</a>
         <div class="border <%= "active-border-signup" if request.path == "/users/new" %>"></div>
-    </div>
+
     <% end %>
 
     <!-- NAVBAR -->
@@ -43,15 +44,15 @@
     <nav class="nav-bar">
       <div class="tabs">
         <a href="/how-it-works" class="<%= "active" if request.path == "/how-it-works" %>">How it works</a>
-        <div class="border <%= "active-border" if request.path == "/how-it-works" %>"></div>
+        <p class=" border <%= "active-border" if request.path == "/how-it-works" %>">_______</p>
       </div>
       <div class="tabs">
         <a href="/browse-staff" class="<%= "active" if request.path == "/browse-staff" %>">Browse staff</a>
-        <div class=" border <%= "active-border" if request.path == "/browse-staff" %>"></div>
+        <p class=" border <%= "active-border" if request.path == "/browse-staff" %>">_______</p>
       </div>
       <div class="tabs">
         <a href="/browse-gigs" class="<%= "active" if request.path == "/browse-gigs" %>">Browse gigs</a>
-        <div class=" border <%= "active-border" if request.path == "/browse-gigs" %>"></div>
+        <p class=" border <%= "active-border" if request.path == "/browse-gigs" %>">_______</p>
       </div>
     </nav>
   </div>
