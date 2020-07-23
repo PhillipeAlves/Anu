@@ -216,7 +216,7 @@ p
 }
 .right-side-image
 {
-    justify-self: end;;
+    justify-self: end;
 }
 h2
 {
@@ -247,11 +247,11 @@ label
     display: block;
     margin: 20px auto;
     text-align: center;
-    color: black;
+    color: rgba(64, 64, 64, 0.765);
 }
 input
 {
-    margin: 0 auto;
+    margin: 10px auto 20px auto;
     padding: 0;
     width: 400px;
     font-family: inherit;
@@ -261,19 +261,19 @@ input
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
-    border-bottom: 2px dashed #454545;
+    border-bottom: .4px solid #676767;
     color: #14a96d;
 }
 input::placeholder 
 {
-    color: rgb(120, 120, 120);
+    color: rgb(57, 57, 57);
     opacity: 1;
 }
 input:focus
 {
     outline: none;
     border-bottom: 2px dashed #14a96d;
-    transition-duration: 1s;
+    transition-duration: .2s;
     color: #14a96d;
 }
 input:focus::placeholder 
@@ -305,7 +305,7 @@ input:focus::placeholder
 {
     box-shadow: inset 5px -15px 10px #00000086,
                 inset -5px 5px 10px #0b0b0b1f,
-                -2px 3px 10px #00000045;
+                -1px 1px 10px #0000005e;
 }
 .required
 {
@@ -327,6 +327,11 @@ input:focus::placeholder
 {
     outline: 0;
 }
+.red
+{
+    color: tomato;
+    font-size: .8em;
+}
 
 /* END - NEW USERS */
 
@@ -338,17 +343,19 @@ input:focus::placeholder
     display: grid;
     align-self: center;
     justify-content: center;
+    text-align: center;
 }
 .edit-profile-link
 {
     margin: 50px auto;
-    text-align: center;
+    color: #14a96d;
 }
 .profile-img
 {
     margin: 0 auto;
     width: 300px;
     border-radius: 50%;
+
 }
 
 /* END - PROFILE */
@@ -365,48 +372,71 @@ input:focus::placeholder
     margin: 0;
     width: 300px;
 }
-.add-type {
+.add-type 
+{
 	font-size: 16px;
-	font-family: sans-serif;
-	font-weight: 700;
-	color: #444;
+	font-family: 'Julius Sans One', sans-serif;
+	font-weight: 1em;
+	color: black;
 	line-height: 1.3;
-	padding: .6em 1.4em .5em .8em;
-	width: 160px;
-	margin: 30px auto;
-	border: 1px solid rgb(205, 205, 205);
-    box-shadow: inset -1px 1px 5px #ffffff,
-                0 1px 2px 1px rgba(0,0,0,.04);
-	border-radius: .5em;
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	appearance: none;
-	background-color: rgb(236, 235, 235);
-	background-position: right .7em top 50%, 0 0;
-	background-size: .65em auto, 100%;
+	padding: .6em 1em .5em 1.2em;
+	width: 200px;
+	margin: 0 auto 20px auto;
+	border: none;
+	background-color: rgb(255, 255, 255);
 }
-.add-type::-ms-expand {
+.add-type::-ms-expand 
+{
 	display: none;
 }
-.add-type:hover {
+.add-type:hover 
+{
 	border-color: rgb(81, 81, 81);
 }
-.add-type:focus {
+.add-type:focus 
+{
 	border-color: #14a96d;
     box-shadow: inset -1px 1px 3px #000f09b7;
 	color: #14a96d;
 	outline: none;
 }
-.add-type option {
+.add-type option 
+{
 	font-weight:normal;
 }
 .back-to-profile
 {
     margin: 0 auto;
+    color: #14a96d;
 }
 .fa-undo
 {
     font-size: .7em;
+}
+.input-file::-webkit-file-upload-button
+{
+    visibility: hidden;
+}
+input[type="file"] 
+{
+    padding: 5px 35px;
+}
+.input-file::before 
+{
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    color: black;
+    font-size: 1em;
+    text-shadow: 1px 1px #fff;
+}
+.input-file:active::before 
+{
+    background: -webkit-linear-gradient(top, #e3e3e300, #f9f9f9);
 }
 
 /* END - EDIT PROFILE */
@@ -426,7 +456,6 @@ input:focus::placeholder
     align-items: center;
     justify-content: center;
     text-align: center;
-
 }
 .profiles-content
 {
@@ -438,11 +467,11 @@ input:focus::placeholder
 }
 .name
 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .profiles-img
 {
-    margin: 0;
+    margin: 50px;
     width: 150px;
     height: 100%;
     overflow: hidden;
@@ -450,3 +479,57 @@ input:focus::placeholder
 }
 
 /* END - PROFILES */
+
+/* START - BROWSE-GIGS */
+
+.browse-gigs-page
+{
+    margin: 50px auto;
+    display: grid;
+    align-self: center;
+    justify-content: center;
+}
+.gig-link
+{
+    text-align: center;
+
+}
+
+/* END - BROWSE-GIGS */
+
+/* START - POST NEW GIG */
+
+.green
+{
+    color: #14a96d;
+    margin: 30px auto;
+}
+textarea
+{
+    text-align: center;
+    justify-content: center;
+    border: none;
+    padding-top: 20px;
+    resize: none;
+}
+textarea:focus::placeholder
+{
+    color: #14a96d;
+}
+textarea:focus
+{
+    color: black;
+    outline: none;
+    border: none;
+    resize: none;
+}
+.calendar {
+    display: block;
+    font-family: 'Julius Sans One', sans-serif;
+    width: 150px;
+    padding: 0;
+    color: black;
+}
+
+
+/* END - POST NEW GIG */

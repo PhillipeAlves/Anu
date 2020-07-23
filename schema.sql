@@ -5,6 +5,7 @@ CREATE TABLE gigs (
     title VARCHAR(50),
     description TEXT,
     user_id INTEGER,
+    date DATE,
     is_front_of_house BOOLEAN,
     is_back_of_house BOOLEAN
 );

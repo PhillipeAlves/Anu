@@ -17,8 +17,8 @@ end
 # ===CREATE===
 
 
-def create_gig(title, description, user_id, is_front_of_house, is_back_of_house)
-    run_sql("INSERT into gigs (title, description, user_id, is_front_of_house, is_back_of_house) values ('#{ title }', '#{ description }', #{ user_id }, '#{ is_front_of_house }', '#{ is_back_of_house }');")
+def create_gig(title, description, user_id, date, is_front_of_house, is_back_of_house)
+    run_sql("INSERT into gigs (title, description, user_id, date, is_front_of_house, is_back_of_house) values ('#{ title }', '#{ description }', #{ user_id }, '#{ date }', '#{ is_front_of_house }', '#{ is_back_of_house }');")
 end
 
 def find_all_gigs

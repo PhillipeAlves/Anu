@@ -6,7 +6,6 @@ require "pg"
 require 'cloudinary'
 require_relative "models/gigs"
 require_relative "models/user"
-require "URI"
 
 enable :sessions
 
@@ -74,17 +73,17 @@ end
 
 post '/users' do
 
-  if params["email"] == "" && params["password"] == ""
+  if params["email"] == "" || params["password"] == ""
 
-    redirect "/users/new", 303
+    erb :new_users
   
   else
 
   create_user(params["email"], params["password"])
 
-  end
-
   redirect "/"
+
+  end
 
 end
 
@@ -123,6 +122,12 @@ get '/workers-back-of-house' do
 
 end
 
+get '/browse-gigs' do
+
+  erb :browse_gigs
+
+end
+
 
 # ===UPDATE===
 
@@ -141,8 +146,6 @@ config = {
 }
 
 patch '/profile' do
-
-  params["position"]
 
   if params["position"] == "FOH"
 
@@ -179,18 +182,13 @@ end
 # ========================GIGS========================
 
 
-get '/gigs/new' do
+get '/gigs/new-gig' do
 
-  erb :new
+  return erb :browse_gigs unless logged_in?
 
-end
-
-get '/gigs/:id' do
-
-  erb :new
+  erb :new_gig
 
 end
-
 
 
 get '/gigs-front-of-house' do
@@ -220,15 +218,25 @@ end
 
 post '/gigs' do
 
-  return "get out of here" unless logged_in? # early return. guard  condition
+  return erb :browse_gigs unless logged_in?
 
-  # create_dish(params["title"], params["image_url"], session["user_id"])
-  # current_user checks the database, not the session
-  create_dish(params["title"], params["image_url"], current_user["id"])
+  if params["position"] == "FOH"
 
-  create_gig(params["title"], params["description"], params["user_id"], params["is_front_of_house"],params["is_back_of_house"])
+    is_front_of_house = "t"
 
-  redirect "/"
+    is_back_of_house = "f"
+
+  else
+
+    is_front_of_house = "f"
+
+    is_back_of_house = "t"
+  
+  end
+
+  create_gig(params["title"], params["description"], current_user["id"], params["calendar"], is_front_of_house, is_back_of_house)
+
+  redirect "/browse-gigs"
 
 end
 

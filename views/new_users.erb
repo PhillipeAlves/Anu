@@ -1,8 +1,9 @@
 <form class="form-styling" action="/users" method="post">
-    <label for="">Email*</label>
+    <h3 class="green">Sign up</h3>
+    <label for="">Email<span class="red">*</span></label>
     <input name="email" type="text" placeholder="Email" autocomplete="off">
-    <label for="">Password*</label>
+    <label for="">Password<span class="red">*</span></label>
     <input name="password" type="password" placeholder="Password" autocomplete="off">
     <button class="marble">Sign up</button>
-    <p class="<%= "required" if 303 %>">* Required fields</p>
+    <p class="red">* Required fields</p>
 </form>

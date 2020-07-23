@@ -1,0 +1,10 @@
+<% if logged_in? %>
+    <div class="browse-gigs-page">
+        <a class="gig-link green" href="/gigs/new-gig"><i class="fa fa-plus" aria-hidden="true"></i> POST A NEW GIG</a>
+    </div>
+  <% else %>
+    <p>To be able able to post you must be logged in.</p>
+    <a href="/session/new">login here.</a>
+<% end %>
+
+

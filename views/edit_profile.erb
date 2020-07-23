@@ -1,17 +1,17 @@
 <div class="profile-page">
 
-    <h2>Hi <%= user["user_name"] %></h2>
+    <h2><%= user["user_name"] %></h2>
 
     <form class="form-styling" action="/profile" enctype="multipart/form-data" method="post">
         <input type="hidden" name="_method" value="patch">
         <label for="">Username</label>
-        <input name="user_name" type="text" value="<%= user["user_name"] %>">
+        <input name="user_name" type="text" value="<%= user["user_name"] %>"  autocomplete="off">
         <label for="">Bio</label>
-        <input name="bio" type="text" value="<%= user["bio"] %>">
+        <input name="bio" type="text" value="<%= user["bio"] %>"  autocomplete="off">
         <label for="">Skills</label>
-        <input name="skills" type="text" value="<%= user["skills"] %>">
+        <input name="skills" type="text" value="<%= user["skills"] %>"  autocomplete="off">
         <label for="">Profile Picture</label>
-        <input name="image_data" type="file" value="<%= user["image_data"] %>">
+        <input class="input-file" name="image_data" type="file" value="<%= user["image_data"] %>" autocomplete="off">
         <select class="add-type" name="position">
             <option value="FOH" selected>Front of House</option>
             <option value="BOH">Back of House</option>
