@@ -100,9 +100,11 @@ get '/profile' do
 
 end
 
-get '/users' do
+get '/profile/:id' do
 
-  erb :users
+  user = find_one_user_by_id(params["id"])
+
+  erb :profile_view, locals: { user: user }
 
 end
 
@@ -193,17 +195,17 @@ end
 
 get '/gigs-front-of-house' do
 
-  gigs_FOH = find_gigs_front_of_house
+  gigs_foh = find_gigs_front_of_house
   
-  erb :gigs_front_of_house, locals: { gigs_FOH: gigs_FOH }
+  erb :gigs_front_of_house, locals: { gigs_foh: gigs_foh }
 
 end
 
 get '/gigs-back-of-house' do
 
-  gigs_BOH = find_gigs_back_of_house
+  gigs_boh = find_gigs_back_of_house
   
-  erb :gigs_back_of_house, locals: { gigs_BOH: gigs_BOH }
+  erb :gigs_back_of_house, locals: { gigs_boh: gigs_boh }
 
 end
 

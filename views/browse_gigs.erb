@@ -1,9 +1,4 @@
-<% if logged_in? %>
-    <div class="browse-gigs-page">
-        <a class="gig-link green" href="/gigs/new-gig"><i class="fa fa-plus" aria-hidden="true"></i> POST A NEW GIG</a>
-    </div>
-    <% else %>
-    <div class="browse-gigs">
+<div class="browse-gigs">
         <div class="browse-gigs-content">
             <div class="img-container">
                 <a href="/gigs-front-of-house"><img class="browse-gigs-img" src="https://images.unsplash.com/photo-1566041510394-cf7c8fe21800?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80" alt="">
@@ -15,11 +10,16 @@
             </div>
         </div>
     </div>
+<% if logged_in? %>
+    <div class="browse-gigs-page">
+        <a class="gig-link green" href="/gigs/new-gig"><i class="fa fa-plus" aria-hidden="true"></i> POST A NEW GIG</a>
+    </div>
+<% else %>
     <div class="error">
         <p>To post a gig you must be logged in.</p>
-        <a class="green" href="/session/new">login here</a>
+        <a class="green" href="/session/new">log in here</a>
         <a class="green sign-up-error" href="/users/new">Sign up here</a>
     </div>
-    <% end %>
+<% end %>
 
 

@@ -1,0 +1,27 @@
+<div class="profile-page">
+
+    <h2 class="name"><%= user["user_name"] %></h2>
+
+    <img class="profile-img" src="<%= user["image_data"] %>" alt="">
+
+    <div>
+        <h3>Bio</h3>
+        <p><%= user["bio"] %></p>
+    </div>
+
+    <div>
+        <h3>Skills</h3>
+        <p><%= user["skills"] %></p>
+    </div>
+
+    <% if user["is_front_of_house"] == "t" %>
+
+        <p>Currently looking for <span class="green">Front of House</span> gigs.</p>
+
+    <% else %>
+
+        <p>Currently looking for <span class="green">Back of House</span> gigs.</p>
+
+    <% end %>
+
+</div>

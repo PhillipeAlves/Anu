@@ -50,8 +50,8 @@
         <p class=" border <%= "active-border" if request.path == "/browse-staff" %>">_______</p>
       </div>
       <div class="tabs">
-        <a href="/browse-gigs" class="<%= "active" if request.path == "/browse-gigs" %>">Browse gigs</a>
-        <p class=" border <%= "active-border" if request.path == "/browse-gigs" %>">_______</p>
+        <a href="/browse-gigs" class="<%= "active" if request.path == "/browse-gigs" || request.path == "/gigs-front-of-house" || request.path == "/gigs-back-of-house" %>">Browse gigs</a>
+        <p class=" border <%= "active-border" if request.path == "/browse-gigs" || request.path == "/gigs-front-of-house" || request.path == "/gigs-back-of-house" %>">_______</p>
       </div>
     </nav>
   </div>

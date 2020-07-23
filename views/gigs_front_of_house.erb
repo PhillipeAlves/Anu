@@ -1,0 +1,11 @@
+<div class="gigs-container">
+    <% gigs_foh.each do |user| %>
+        <div class="gig">
+            <h3 class="descriptions">Date</h3>
+            <p class="date"><%= user["date"] %></p>
+            <h2 class="titles"><%= user["title"] %></h2>
+            <h3 class="descriptions">Description</h3>
+            <p class="white"><%= user["description"] %></p>
+        </div>
+    <% end %>
+</div>

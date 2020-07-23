@@ -252,7 +252,7 @@ label
 input
 {
     margin: 10px auto 20px auto;
-    padding: 0;
+    padding: 10px 0;
     width: 400px;
     font-family: inherit;
     text-align: center;
@@ -284,13 +284,15 @@ input:focus::placeholder
 .marble
 {
     margin: 60px auto;
+    font-size: 1em;
     padding: 10px;
-    width: 300px;
+    width: 250px;
     border: none;
     background-image: url(https://image.freepik.com/free-vector/grunge-is-black-white-background-abstract-monochrome-texture-pattern-cracks-chips_35257-317.jpg);
     background-size: 200px;
     background-position: 35px 0;
-    box-shadow: inset -5px 5px 10px #0b0b0b1f,
+    box-shadow: inset -2px 2px 5px #ffffff1f,
+                inset -5px 5px 10px #0b0b0b1f,
                 inset 5px -15px 10px #00000086,
                 -5px 5px 10px #00000045;
     border-radius: 50px;
@@ -564,7 +566,7 @@ textarea:focus
     display: block;
     font-family: 'Julius Sans One', sans-serif;
     width: 150px;
-    padding: 0;
+    padding: 10px 0;
     color: black;
 }
 .error
@@ -580,3 +582,40 @@ textarea:focus
 }
 
 /* END - POST NEW GIG */
+
+/* START - GIGS */
+
+.gigs-container
+{
+    background: linear-gradient(30deg, black, rgba(0, 0, 0, 0.936));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;  
+}
+.gig
+{
+    color: white;
+    margin: 0 auto;
+    width: 250px;
+    text-align: justify;
+}
+.date
+{
+    color: rgba(255, 255, 255, 0.731);
+    text-align: center;
+    font-size: .8em;
+}
+.descriptions
+{
+    font-size: .9em;
+    text-align: center;
+}
+.titles
+{
+    color: #14a96d;
+    padding: 5px 0;
+    text-align: center; 
+}
+
+/* END - GIGS */
