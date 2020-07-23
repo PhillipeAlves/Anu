@@ -107,7 +107,25 @@ get '/users' do
 
 end
 
+get '/workers-front-of-house' do
+
+  foh = find_users_front_of_house
+
+  erb :workers_front_of_house, locals: { foh: foh }
+
+end
+
+get '/workers-back-of-house' do
+
+  boh = find_users_back_of_house
+
+  erb :workers_back_of_house, locals: { boh: boh }
+
+end
+
+
 # ===UPDATE===
+
 get '/profile/edit' do
 
   user = find_one_user_by_id(current_user["id"])

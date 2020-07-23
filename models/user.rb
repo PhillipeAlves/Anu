@@ -23,11 +23,11 @@ def find_matches(sql)
 end 
 
 def find_users_front_of_house
-    run_sql("SELECT * FROM users WHERE is_front_of_house = '1';")
+    run_sql("SELECT * FROM users WHERE is_front_of_house = 't';")
 end
 
 def find_users_back_of_house
-    run_sql("SELECT * FROM users WHERE is_back_of_house = '1';")
+    run_sql("SELECT * FROM users WHERE is_back_of_house = 't';")
 end
 
 def find_one_user_by_id(id)

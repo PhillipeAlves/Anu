@@ -1,0 +1,20 @@
+<% foh.each do |user| %>
+
+    <div class="profiles">
+        <div>
+            <h2 class="name"><%= user["user_name"] %></h2>
+            <img class="profiles-img" src="<%= user["image_data"] %>" alt="">
+        </div>
+        <div class="profiles-content">
+            <div>
+                <h3>Bio</h3>
+                <p><%= user["bio"] %></p>
+            </div>
+            <div>
+                <h3>Skills</h3>
+                <p><%= user["skills"] %></p>
+            </div>
+        </div>
+    </div>
+
+<% end %>

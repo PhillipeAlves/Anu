@@ -348,6 +348,7 @@ input:focus::placeholder
 {
     margin: 0 auto;
     width: 300px;
+    border-radius: 50%;
 }
 
 /* END - PROFILE */
@@ -364,7 +365,6 @@ input:focus::placeholder
     margin: 0;
     width: 300px;
 }
-
 .add-type {
 	font-size: 16px;
 	font-family: sans-serif;
@@ -408,4 +408,45 @@ input:focus::placeholder
 {
     font-size: .7em;
 }
+
 /* END - EDIT PROFILE */
+
+/* START - PROFILES */
+
+.profiles
+{
+    width: 500px;
+    font-size: 0.8em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 50px auto;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+.profiles-content
+{
+    margin: 50px 0 0 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.name
+{
+    margin-bottom: 20px;
+}
+.profiles-img
+{
+    margin: 0;
+    width: 150px;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+/* END - PROFILES */
