@@ -111,8 +111,9 @@ a
 }
 .nav-bar
 {
-    margin-top: 50px;
-    padding: 10px 250px;
+    max-width: 500px;
+    margin: 50px auto 10px auto;
+    padding: 10px auto;
     display: flex;
 }
 .tabs
@@ -147,7 +148,6 @@ a
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTe9meFs4twANobB-rfxcdB9KLyJ0GqsGtqng&usqp=CAU);
     height: 30px;
 }
-
 
 /* END - LAYOUT */
 
@@ -494,7 +494,44 @@ input[type="file"]
     text-align: center;
 
 }
-
+.browse-gigs
+{
+    margin: 0 0 50px 0;
+    padding: 0 50px;
+}
+.browse-gigs-content
+{
+    margin: 50px 0 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+.browse-gigs-img
+{
+    margin: 0;
+    width: 300px;
+}
+.img-container
+{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.centered 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+}
+.white
+{
+    color: white;
+}
 /* END - BROWSE-GIGS */
 
 /* START - POST NEW GIG */
@@ -530,6 +567,16 @@ textarea:focus
     padding: 0;
     color: black;
 }
-
+.error
+{
+    margin: 100px auto;
+    text-align: center;
+}
+.sign-up-error
+{
+    border-left: 1px solid rgba(0, 0, 0, 0.601);
+    padding-left: 8px;
+    padding-top: 3px;
+}
 
 /* END - POST NEW GIG */
