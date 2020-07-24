@@ -55,7 +55,7 @@ end
 # ===UPDATE===
 
 
-def update_gig(id, title, description, is_front_of_house, is_back_of_house)
-    run_sql("UPDATE gigs SET title = '#{ title }', description = '#{ description }', is_front_of_house = '#{ is_front_of_house }', is_back_of_house = '#{ is_back_of_house }' WHERE id = #{ id};")
+def update_gig(id, title, description, date, is_front_of_house, is_back_of_house)
+    run_sql("UPDATE gigs SET title = '#{ title }', description = '#{ description }', date = '#{ date }', is_front_of_house = '#{ is_front_of_house }', is_back_of_house = '#{ is_back_of_house }' WHERE id = #{ id};")
 end
 

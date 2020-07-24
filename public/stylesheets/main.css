@@ -245,7 +245,7 @@ p
 label
 {
     display: block;
-    margin: 20px auto;
+    margin: 10px auto;
     text-align: center;
     color: rgba(64, 64, 64, 0.765);
 }
@@ -284,7 +284,6 @@ input:focus::placeholder
 .marble
 {
     margin: 60px auto;
-    font-size: 1em;
     padding: 10px;
     width: 250px;
     border: none;
@@ -333,6 +332,10 @@ input:focus::placeholder
 {
     color: tomato;
     font-size: .8em;
+}
+button
+{
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.45);
 }
 
 /* END - NEW USERS */
@@ -583,7 +586,7 @@ textarea:focus
 
 /* END - POST NEW GIG */
 
-/* START - GIGS */
+/* START - GIGS-BOH */
 
 .gigs-container
 {
@@ -592,6 +595,7 @@ textarea:focus
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: center;  
+    padding: 50px 0; 
 }
 .gig
 {
@@ -617,5 +621,77 @@ textarea:focus
     padding: 5px 0;
     text-align: center; 
 }
+.hidden-btn
+{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: .9em;
+    margin: 0;
+    padding: 0;
+}
+.edit-delete-gig
+{
+    text-align: right;
+}
+/* END - GIGS-BOH */
 
-/* END - GIGS */
+/* START - GIGS FOH */
+
+.gigs-container-foh
+{
+    background: linear-gradient(30deg, rgb(255, 255, 255), rgba(239, 239, 239, 0.936));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0; 
+}
+.gig-foh
+{
+    color: black;
+    margin: 0 auto;
+    width: 250px;
+    text-align: justify;
+}
+.date-foh
+{
+    color: rgba(0, 0, 0, 0.669);
+    text-align: center;
+    font-size: .8em;
+}
+.descriptions-foh
+{
+    font-size: .9em;
+    text-align: center;
+}
+.titles-foh
+{
+    color: #14a96d;
+    padding: 5px 0;
+    text-align: center; 
+}
+.hidden-btn-foh 
+{
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: .9em;
+    margin: 0;
+    padding: 0;
+}
+
+/* END - GIGS BOH */
+
+/* START - EDIT GIG */
+
+.p-contained
+{
+    color: rgba(0, 0, 0, 0.69);
+    max-width: 350px;
+    text-align: justify;
+}
+
+/* END - EDIT GIG */

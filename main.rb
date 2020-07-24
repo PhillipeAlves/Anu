@@ -133,7 +133,7 @@ end
 
 # ===UPDATE===
 
-get '/profile/edit' do
+get '/profile/:id/edit' do
 
   user = find_one_user_by_id(current_user["id"])
 
@@ -148,6 +148,8 @@ config = {
 }
 
 patch '/profile' do
+
+  return erb :browse_gigs unless logged_in?
 
   if params["position"] == "FOH"
 
@@ -212,9 +214,9 @@ end
 
 get '/gigs/:id' do
 
-  dish = find_one_dish_by_id(params["id"])
+  gig = find_one_gig_by_id(params["id"])
 
-  erb :show, locals: { dish: dish }
+  erb :show, locals: { gig: gig }
 
 end
 
@@ -245,7 +247,7 @@ end
 
 delete '/gigs/:id' do
 
-  delete_dish(params["id"])
+  delete_gig(params["id"])
 
   redirect "/"
 
@@ -255,15 +257,31 @@ get '/gigs/:id/edit' do
 
   gig = find_one_gig_by_id(params["id"])
 
-  erb :edit, locals: { gig: gig }
+  erb :edit_gig, locals: { gig: gig }
 
 end
 
 patch '/gigs/:id' do
 
-  update_gig(params["id"], params["title"], params["is_front_of_house"], params["is_back_of_house"])
+  return erb :browse_gigs unless logged_in?
+
+  if params["position"] == "FOH"
+
+    is_front_of_house = "t"
+
+    is_back_of_house = "f"
+
+  else
+
+    is_front_of_house = "f"
+
+    is_back_of_house = "t"
   
-  redirect "/gigs/#{params["id"]}"
+  end
+  
+  update_gig(params["id"], params["title"], params["description"], params["calendar"], is_front_of_house, is_back_of_house)
+
+  redirect "/"
 
 end
 

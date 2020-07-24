@@ -1,11 +1,22 @@
-<div class="gigs-container">
-    <% gigs_foh.each do |user| %>
-        <div class="gig">
-            <h3 class="descriptions">Date</h3>
-            <p class="date"><%= user["date"] %></p>
-            <h2 class="titles"><%= user["title"] %></h2>
-            <h3 class="descriptions">Description</h3>
-            <p class="white"><%= user["description"] %></p>
+<div class="gigs-container-foh">
+    <% gigs_foh.each do |gig| %>
+        <div class="gig-foh">
+            <h3 class="descriptions-foh">Date</h3>
+            <p class="date-foh"><%= gig["date"] %></p>
+            <h2 class="titles-foh"><%= gig["title"] %></h2>
+            <h3 class="descriptions-foh">Description</h3>
+            <p><%= gig["description"] %></p>
+            <% if logged_in? %>
+                <% if current_user["id"] == gig["user_id"] %>
+                    <div class="edit-delete-gig">
+                        <form action="/gigs/<%= gig["id"] %>" method="post">
+                            <input type="hidden" name="_method" value="delete">
+                            <button class="hidden-btn-foh"><i class="fa fa-eraser" aria-hidden="true"></i> Delete </button>
+                        </form>
+                        <a href="/gigs/<%= gig["id"] %>/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> EDIT</a>
+                    </div>
+                <% end %>
+            <% end %>
         </div>
     <% end %>
 </div>
