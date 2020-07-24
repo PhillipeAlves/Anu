@@ -81,12 +81,17 @@ post '/users' do
 
   create_user(params["email"], params["password"])
 
-  redirect "/"
+  redirect "/users/signed-up"
 
   end
 
 end
 
+get '/users/signed-up' do
+
+  erb :signed_up
+
+end
 
 # ===READ===
 
@@ -135,6 +140,8 @@ end
 
 get '/profile/:id/edit' do
 
+  return "Please log in to access this content" unless logged_in?
+
   user = find_one_user_by_id(current_user["id"])
 
   erb :edit_profile, locals: { user: user }
@@ -182,6 +189,36 @@ patch '/profile' do
   redirect "/profile"
 
 end
+
+# ===DELETE===
+
+delete '/profile/:id' do
+
+  if logged_in? && (current_user["id"] == params["id"])
+
+    if find_gigs_from_user(current_user["id"]) != ""
+        
+        delete_gigs_from_user(current_user["id"])
+
+    end
+
+    delete_user(current_user["id"])
+
+  end
+
+  session["user_id"] = nil
+
+  redirect '/profile-deleted'
+  
+
+end
+
+get '/profile-deleted' do
+
+  erb :profile_deleted
+
+end
+
 
 # ========================GIGS========================
 

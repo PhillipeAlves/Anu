@@ -443,6 +443,16 @@ input[type="file"]
 {
     background: -webkit-linear-gradient(top, #e3e3e300, #f9f9f9);
 }
+.hidden-btn-red
+{
+    background-color: transparent;
+    border: none;
+    color: tomato;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: .9em;
+    margin: 0;
+    padding: 0;
+}
 
 /* END - EDIT PROFILE */
 
@@ -695,3 +705,19 @@ textarea:focus
 }
 
 /* END - EDIT GIG */
+
+/* START - SUCCESSFUL SIGNUP */
+
+.success
+{
+    margin: 100px auto;
+    text-align: center;
+}
+.sign-up-success
+{
+    border-left: 1px solid rgba(0, 0, 0, 0.601);
+    padding-left: 8px;
+    padding-top: 3px;
+}
+
+/* START - SUCCESSFUL SIGNUP */

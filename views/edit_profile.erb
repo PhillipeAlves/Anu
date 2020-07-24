@@ -1,26 +1,33 @@
-<div class="profile-page">
+<% if logged_in? %>
 
-    <h2><%= user["user_name"] %></h2>
+    <div class="profile-page">
 
-    <form class="form-styling" action="/profile" enctype="multipart/form-data" method="post">
-        <input type="hidden" name="_method" value="patch">
-        <label for="">Username</label>
-        <input name="user_name" type="text" value="<%= user["user_name"] %>"  autocomplete="off">
-        <label for="">Skills</label>
-        <input name="skills" type="text" value="<%= user["skills"] %>"  autocomplete="off">
-        <label for="">Profile Picture</label>
-        <input class="input-file" name="image_data" type="file" value="<%= user["image_data"] %>" autocomplete="off">
-        <select class="add-type" name="position">
-            <option value="FOH">Front of House</option>
-            <option value="BOH">Back of House</option>
-        </select>
-        <label for="">Bio</label>
-        <input name="bio" type="text" value="<%= user["bio"] %>"  autocomplete="off">
-        <button class="marble">UPDATE</button>
-    </form>
+        <h2><%= user["user_name"] %></h2>
 
-    <a class="back-to-profile" href="/profile"><i class="fa fa-undo" aria-hidden="true"></i> Back to Profile</a>
+        <form class="form-styling" action="/profile" enctype="multipart/form-data" method="post">
+            <input type="hidden" name="_method" value="patch">
+            <label for="">Username</label>
+            <input name="user_name" type="text" value="<%= user["user_name"] %>"  autocomplete="off">
+            <label for="">Skills</label>
+            <input name="skills" type="text" value="<%= user["skills"] %>"  autocomplete="off">
+            <label for="">Profile Picture</label>
+            <input class="input-file" name="image_data" type="file" value="<%= user["image_data"] %>" autocomplete="off">
+            <select class="add-type" name="position">
+                <option value="FOH">Front of House</option>
+                <option value="BOH">Back of House</option>
+            </select>
+            <label for="">Bio</label>
+            <input name="bio" type="text" value="<%= user["bio"] %>"  autocomplete="off">
+            <button class="marble">UPDATE</button>
+        </form>
 
-</div>
+        <a class="back-to-profile" href="/profile"><i class="fa fa-undo" aria-hidden="true"></i> Back to Profile</a>
 
-        
+        <form class="form-styling" action="/profile/<%= user["id"] %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button class="hidden-btn-red"><i class="fa fa-minus-circle" aria-hidden="true"></i>Delete Profile</button>
+        </form>
+
+    </div>
+
+<% end %>
