@@ -5,3 +5,4 @@ gem 'pg'
 gem 'bcrypt'
 gem 'httparty'
 gem 'cloudinary'
+
