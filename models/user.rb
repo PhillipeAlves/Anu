@@ -54,7 +54,7 @@ end
 
 
 def update_user(id, user_name, bio, skills, image_data, is_front_of_house, is_back_of_house)
-    run_sql("UPDATE users SET user_name = '#{ user_name }', bio = '#{ bio }', skills = '#{ skills }', image_data = '#{ image_data }', is_front_of_house = '#{ is_front_of_house }', is_back_of_house = '#{ is_back_of_house }' WHERE id = #{ id};")
+    run_sql("UPDATE users SET user_name = $$#{ user_name }$$, bio = $$#{ bio }$$, skills = $$#{ skills }$$, image_data = '#{ image_data }', is_front_of_house = '#{ is_front_of_house }', is_back_of_house = '#{ is_back_of_house }' WHERE id = #{ id};")
 end
 
 

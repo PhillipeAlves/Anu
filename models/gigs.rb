@@ -4,7 +4,7 @@
 
 
 def run_sql(sql)
-    db = PG.connect(dbname: 'anu')
+    db = PG.connect(ENV['DATABASE_URL'] || {dbname: 'anu'})
     results = db.exec(sql)
     db.close
     return results
@@ -18,7 +18,7 @@ end
 
 
 def create_gig(title, description, user_id, date, is_front_of_house, is_back_of_house)
-    run_sql("INSERT into gigs (title, description, user_id, date, is_front_of_house, is_back_of_house) values ('#{ title }', $$#{ description }$$, #{ user_id }, '#{ date }', '#{ is_front_of_house }', '#{ is_back_of_house }');")
+    run_sql("INSERT into gigs (title, description, user_id, date, is_front_of_house, is_back_of_house) values ($$#{ title }$$, $$#{ description }$$, #{ user_id }, '#{ date }', '#{ is_front_of_house }', '#{ is_back_of_house }');")
 end
 
 def find_all_gigs
@@ -62,6 +62,6 @@ end
 
 
 def update_gig(id, title, description, date, is_front_of_house, is_back_of_house)
-    run_sql("UPDATE gigs SET title = '#{ title }', description = $$#{ description }$$, date = '#{ date }', is_front_of_house = '#{ is_front_of_house }', is_back_of_house = '#{ is_back_of_house }' WHERE id = #{ id};")
+    run_sql("UPDATE gigs SET title = $$#{ title }$$, description = $$#{ description }$$, date = '#{ date }', is_front_of_house = '#{ is_front_of_house }', is_back_of_house = '#{ is_back_of_house }' WHERE id = #{ id};")
 end
 

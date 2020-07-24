@@ -10,9 +10,9 @@
         <p><%= user["skills"] %></p>
     </div>
     <% if user["is_front_of_house"] == "t" %>
-        <p>Currently looking for <span class="green">Front of House</span> gigs.</p>
+      <a href="/workers-front-of-house" class="green">Front of House</a>
     <% else %>
-        <p>Currently looking for <span class="green">Back of House</span> gigs.</p>
+        <a href="/workers-back-of-house" class="green">Back of House</a>
     <% end %>
     <a href="/profile/<%= user["id"]%>/edit " class="edit-profile-link">Edit profile</a>
 </div>

@@ -3,7 +3,7 @@
     <div class="profiles">
         <div>
             <h2 class="name"><%= user["user_name"] %></h2>
-            <img class="profiles-img" src="<%= user["image_data"] %>" alt="">
+            <a href="/profile/<%= user["id"] %>"><img class="profiles-img" src="<%= user["image_data"] %>" alt=""></a>
         </div>
         <div class="profiles-content">
             <div>
