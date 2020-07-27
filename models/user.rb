@@ -6,7 +6,7 @@ require 'bcrypt'
 
 def create_user(email, password)
     password_digest = BCrypt::Password.create(password)
-    run_sql("INSERT INTO users (email, password_digest) values('#{email}', '#{password_digest}');")
+    run_sql("INSERT INTO users (email, password_digest) values($1, $2);", [email, password_digest])
 end
 
 
@@ -31,12 +31,12 @@ def find_users_back_of_house
 end
 
 def find_one_user_by_id(id)
-    users = run_sql("SELECT * FROM users WHERE id = #{id};")
+    users = run_sql("SELECT * FROM users WHERE id = $1;", [id])
     users.first
 end
 
 def find_one_user_by_email(email)
-    users = run_sql("SELECT * FROM users WHERE email = '#{email}';")
+    users = run_sql("SELECT * FROM users WHERE email = $1;", [email])
     users.first
 end
 
@@ -45,8 +45,8 @@ end
 
 
 def delete_user(id)
-    sql = "DELETE from users WHERE id = #{id};"
-    run_sql(sql)
+    sql = "DELETE from users WHERE id = $1;"
+    run_sql(sql, [id])
 end
 
 
@@ -54,7 +54,7 @@ end
 
 
 def update_user(id, user_name, bio, skills, image_data, is_front_of_house, is_back_of_house)
-    run_sql("UPDATE users SET user_name = $$#{ user_name }$$, bio = $$#{ bio }$$, skills = $$#{ skills }$$, image_data = '#{ image_data }', is_front_of_house = '#{ is_front_of_house }', is_back_of_house = '#{ is_back_of_house }' WHERE id = #{ id};")
+    run_sql("UPDATE users SET user_name = $1, bio = $2, skills = $3, image_data = $4, is_front_of_house = $5, is_back_of_house = $6 WHERE id = $7;", [user_name, bio, skills, image_data, is_front_of_house, is_back_of_house, id])
 end
 
 

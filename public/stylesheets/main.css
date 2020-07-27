@@ -209,7 +209,7 @@ p
 .how-links
 {
     font-family: 'Julius Sans One', sans-serif;
-    
+
 }
 /* END - HOW IT WORKS */
 
@@ -357,6 +357,11 @@ input:focus::placeholder
 button
 {
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.45);
+    outline: none !important;
+}
+button:focus 
+{
+    outline: none;
 }
 
 /* END - NEW USERS */
@@ -743,4 +748,4 @@ textarea:focus
     padding-top: 3px;
 }
 
-/* START - SUCCESSFUL SIGNUP */
+/* end - SUCCESSFUL SIGNUP */

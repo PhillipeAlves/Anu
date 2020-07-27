@@ -10,10 +10,8 @@
             <option value="FOH" selected>Front of House</option>
             <option value="BOH">Back of House</option>
     </select>
-    <label for="">Original description</label>
-    <p class="p-contained"><%= gig["description"]%></p>
     <label for="">Description</label>
-    <textarea name="description" id="" cols="30" rows="10" placeholder="Describe here your gig..."></textarea> 
+    <textarea name="description" id="" cols="30" rows="10" placeholder="Describe here your gig..."><%= gig["description"] %></textarea> 
     <button class="marble">Post</button>
 </form>
 
