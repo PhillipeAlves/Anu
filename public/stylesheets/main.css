@@ -99,6 +99,13 @@ a
     right: 165px;
     position: fixed; 
 }
+.messages
+{
+    font-size: .7em;
+    top: 20px;
+    right: 245px;
+    position: fixed; 
+}
 .hp-img
 {
     margin-top: 50px;

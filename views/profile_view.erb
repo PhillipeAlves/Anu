@@ -15,3 +15,13 @@
         <p>Currently looking for <a href="/workers-back-of-house" class="green">Back of House</a> gigs.</p>
     <% end %>
 </div>
+
+<% if logged_in? %>
+
+<form class="form-styling" action="/profile/<%= user["id"] %>" method="post">
+    <label for="">Message</label>
+    <textarea name="message" id="" cols="30" rows="10" placeholder="Write your message here..."></textarea> 
+    <button class="marble">Post</button>
+</form>
+
+<% end %>

@@ -21,3 +21,10 @@ CREATE TABLE users (
     is_front_of_house BOOLEAN,
     is_back_of_house BOOLEAN
 );
+
+CREATE TABLE messages (
+    id SERIAL PRIMARY KEY,
+    message TEXT,
+    from_user_id INTEGER,
+    to_user_id INTEGER
+);

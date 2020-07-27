@@ -61,5 +61,5 @@ end
 
 
 def update_gig(id, title, description, date, is_front_of_house, is_back_of_house)
-    run_sql("UPDATE gigs SET title = $1, description = $2, date = $3, is_front_of_house = $4, is_back_of_house = $5 WHERE id = $6;", [title, description, date, is_front_of_house, is_back_of_house, id])
+    run_sql("UPDATE gigs SET title = $1, description = $2, date = $3, is_front_of_house = $4, is_back_of_house = 5 WHERE id = $6;", [title, description, date, is_front_of_house, is_back_of_house, id])
 end

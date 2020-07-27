@@ -2,10 +2,12 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 also_reload "models/gigs" if development?
 also_reload "models/user" if development?
+also_reload "models/messages" if development?
 require "pg"
 require 'cloudinary'
 require_relative "models/gigs"
 require_relative "models/user"
+require_relative "models/messages"
 
 enable :sessions
 
@@ -208,6 +210,23 @@ delete '/gigs/:id' do
   redirect "/"
 end
 
+
+# =====================MESSAGES======================
+
+# ===CREATE===
+
+post '/profile/:id' do
+  create_message(params["message"], current_user["id"], params["id"])
+  redirect "/profile"
+end
+
+# ===READ===
+
+get '/messages' do
+  messages = find_messages_to_user(current_user["id"])
+
+  erb :view_messages, locals: { messages: messages }
+end
 
 # ======================SESSION======================
 

@@ -25,7 +25,8 @@
             <input type="hidden" name="_method" value="delete">
             <button class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
         </form>
-        <a href="/profile" class="profile <%= "active-login" if request.path == "/profile" %>"><i class="fa fa-user" aria-hidden="true"></i></i> Profile</a>
+        <a href="/profile" class="profile <%= "active-login" if request.path == "/profile" %>"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+        <a href="/messages" class="messages <%= "active-login" if request.path == "/messages" %>"><i class="fa fa-envelope-o" aria-hidden="true"></i> Messages</a>
     <% else %> 
         <a href="/session/new" class="login <%= "active-login" if request.path == "/session/new" %>"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
         <a href="/users/new" class="signup <%= "active-signup" if request.path == "/users/new" %>">Sign up</a>
