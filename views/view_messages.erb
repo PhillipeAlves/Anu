@@ -1,10 +1,20 @@
-<% messages.each do |message| %>
+<% messages_to.each do |message| %>
     <div class="profiles">
         <div class="profiles-content">
             <h3>Message</h3>
             <p class="p-contained"><%= message["message"] %></p>
-            <h4>From</43>
-            <p><%= message["user_name"] %></h3></p>
+            <h4>From</h4>
+            <p><%= message["user_name"] %></p>
+        </div>
+    </div>
+<% end %>
+<% messages_from.each do |message| %>
+    <div class="profiles">
+        <div class="profiles-content">
+            <h3><%= message["user_name"] %></h3>
+            <p class="p-contained"><%= message["message"] %></p>
+            <h4>From</h4>
+            <p>You</h3></p>
         </div>
     </div>
 <% end %>

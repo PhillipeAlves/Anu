@@ -7,7 +7,11 @@ end
 # ===READ===
 
 def find_messages_to_user(id)
-    messages = run_sql("SELECT * FROM messages INNER JOIN users ON messages.from_user_id = users.id where to_user_id = $1;", [id])
+    messages = run_sql("SELECT * FROM messages INNER JOIN users ON messages.from_user_id = users.id WHERE to_user_id = $1;", [id])
+end
+
+def find_messages_from_user(id)
+    messages = run_sql("SELECT * FROM messages INNER JOIN users ON messages.to_user_id = users.id WHERE from_user_id = $1;", [id])
 end
 
 # ===DELETE===

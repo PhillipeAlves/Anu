@@ -223,9 +223,9 @@ end
 # ===READ===
 
 get '/messages' do
-  messages = find_messages_to_user(current_user["id"])
-
-  erb :view_messages, locals: { messages: messages }
+  messages_to = find_messages_to_user(current_user["id"])
+  messages_from = find_messages_from_user(current_user["id"])
+  erb :view_messages, locals: { messages_to: messages_to, messages_from: messages_from }
 end
 
 # ======================SESSION======================
