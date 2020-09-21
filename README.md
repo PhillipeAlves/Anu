@@ -49,4 +49,4 @@ information across the application.
 - Heroku
 - BCrypt
 
-[![Click here!]<img src="https://us.123rf.com/450wm/giamportone/giamportone1804/giamportone180400109/99753262-stock-vector-click-here-button-with-arrow-pointer-icon.jpg?ver=6" width="40%">.](https://intense-beach-35347.herokuapp.com/)
+[![Click here!] <img src="https://us.123rf.com/450wm/giamportone/giamportone1804/giamportone180400109/99753262-stock-vector-click-here-button-with-arrow-pointer-icon.jpg?ver=6" width="40%">.](https://intense-beach-35347.herokuapp.com/)
