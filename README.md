@@ -49,4 +49,4 @@ information across the application.
 - Heroku
 - BCrypt
 
-[![Click here!](/public/click-btn.png)](https://intense-beach-35347.herokuapp.com/)
+[![Click here!](/public/click-btn.jpg)](https://intense-beach-35347.herokuapp.com/)
