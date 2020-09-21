@@ -52,5 +52,3 @@ information across the application.
 - BCrypt
 
 [Try me!](https://intense-beach-35347.herokuapp.com/)
-
-![Preview](/public/anu.png)
