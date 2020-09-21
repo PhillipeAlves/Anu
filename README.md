@@ -1,4 +1,4 @@
-![Banner](anu.gif)
+![Banner](/public/anu.gif)
 
 # ANU
 
