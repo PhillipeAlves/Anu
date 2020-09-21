@@ -1,3 +1,5 @@
+![Styling](/public/band.png)
+
 # GA SEI Project 2: ANU
 
 ## The Project
