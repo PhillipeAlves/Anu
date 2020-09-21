@@ -1,4 +1,4 @@
-![Banner](/public/anu-banner.gif)
+![Banner](/public/banner-anu.gif)
 
 ## The Project
 
@@ -49,4 +49,4 @@ information across the application.
 - Heroku
 - BCrypt
 
-[![Click here!](/public/click-btn.png)](https://intense-beach-35347.herokuapp.com/)
+[![Click here!](/public/click.png)](https://intense-beach-35347.herokuapp.com/)
