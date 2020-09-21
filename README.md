@@ -1,8 +1,6 @@
 # GA SEI Project 2: ANU
 
-```
 ## The Project
-```
 
 After over a decade working in hospitality as a chef, it became
 obvious to me that there are some key issues in the industry
@@ -20,9 +18,7 @@ allows workers to get gigs based on their availability. In
 parallel, businesses can browse for workers based on their
 profile and post job openings.
 
-```
 ## The features
-```
 
 This was the very first project I did using Ruby. The app
 is structured using Sinatra and ERB templating. For my
@@ -42,16 +38,15 @@ The user’s password is encrypted using Bcrypt and the
 Session is managed with Sinatra to help to persist
 information across the application.
 
-```
 ## Technologies
-```
 
 - HTML5
 - CSS
 - Ruby
 - PostgreSQL
 - Sinatra
-- Heroku (to host my website)
-- BCrypt (password encryption)
+- Cloudinary
+- Heroku
+- BCrypt
 
 [Try me!](https://intense-beach-35347.herokuapp.com/).
