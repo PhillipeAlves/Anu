@@ -1,7 +1,5 @@
 ![Banner](/public/anu-banner.gif)
 
-# ANU
-
 ## The Project
 
 After over a decade working in hospitality as a chef, it became
